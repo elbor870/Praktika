@@ -1,0 +1,46 @@
+/* Базовый сброс оформления */
+.ok, .error, .hide {
+  display: none;
+}
+
+/* Расстояние между блоками вопросов */
+div {
+  margin-bottom: 25px;
+}
+
+/* Текстовая кнопка проверки */
+.btn {
+  display: inline-block;
+  margin-top: 8px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ЛОГИКА ДЛЯ СИНГЛ-ВЫБОРА (RADIO) */
+#show-q1:checked ~ #q1-correct:checked ~ .ok,
+#show-q3:checked ~ #q3-correct:checked ~ .ok,
+#show-q4:checked ~ #q4-correct:checked ~ .ok,
+#show-q5:checked ~ #q5-correct:checked ~ .ok,
+#show-q6:checked ~ #q6-correct:checked ~ .ok,
+#show-q7:checked ~ #q7-correct:checked ~ .ok,
+#show-q8:checked ~ #q8-correct:checked ~ .ok,
+#show-q9:checked ~ #q9-correct:checked ~ .ok { display: block; }
+
+#show-q1:checked ~ #q1-w1:checked ~ .error, #show-q1:checked ~ #q1-w2:checked ~ .error, #show-q1:checked ~ #q1-w1:not(:checked) ~ #q1-w2:not(:checked) ~ #q1-correct:not(:checked) ~ .error,
+#show-q3:checked ~ #q3-w1:checked ~ .error, #show-q3:checked ~ #q3-w2:checked ~ .error, #show-q3:checked ~ #q3-w1:not(:checked) ~ #q3-w2:not(:checked) ~ #q3-correct:not(:checked) ~ .error,
+#show-q4:checked ~ #q4-w1:checked ~ .error, #show-q4:checked ~ #q4-w2:checked ~ .error, #show-q4:checked ~ #q4-w1:not(:checked) ~ #q4-w2:not(:checked) ~ #q4-correct:not(:checked) ~ .error,
+#show-q5:checked ~ #q5-w1:checked ~ .error, #show-q5:checked ~ #q5-w2:checked ~ .error, #show-q5:checked ~ #q5-w1:not(:checked) ~ #q5-w2:not(:checked) ~ #q5-correct:not(:checked) ~ .error,
+#show-q6:checked ~ #q6-w1:checked ~ .error, #show-q6:checked ~ #q6-w2:checked ~ .error, #show-q6:checked ~ #q6-w1:not(:checked) ~ #q6-w2:not(:checked) ~ #q6-correct:not(:checked) ~ .error,
+#show-q7:checked ~ #q7-w1:checked ~ .error, #show-q7:checked ~ #q7-w2:checked ~ .error, #show-q7:checked ~ #q7-w1:not(:checked) ~ #q7-w2:not(:checked) ~ #q7-correct:not(:checked) ~ .error,
+#show-q8:checked ~ #q8-w1:checked ~ .error, #show-q8:checked ~ #q8-w2:checked ~ .error, #show-q8:checked ~ #q8-w1:not(:checked) ~ #q8-w2:not(:checked) ~ #q8-correct:not(:checked) ~ .error,
+#show-q9:checked ~ #q9-w1:checked ~ .error, #show-q9:checked ~ #q9-w2:checked ~ .error, #show-q9:checked ~ #q9-w1:not(:checked) ~ #q9-w2:not(:checked) ~ #q9-correct:not(:checked) ~ .error { display: block; }
+
+/* ЛОГИКА ДЛЯ МНОЖЕСТВЕННОГО ВЫБОРА (CHECKBOX) */
+/* Вопрос 2 */
+#show-q2:checked ~ #q2-correct1:checked ~ #q2-correct2:checked ~ #q2-w1:not(:checked) ~ .ok { display: block; }
+#show-q2:checked ~ #q2-w1:checked ~ .error, #show-q2:checked ~ #q2-correct1:not(:checked) ~ .error, #show-q2:checked ~ #q2-correct2:not(:checked) ~ .error { display: block; }
+
+/* Вопрос 10 */
+#show-q10:checked ~ #q10-correct1:checked ~ #q10-correct2:checked ~ #q10-w1:not(:checked) ~ .ok { display: block; }
+#show-q10:checked ~ #q10-w1:checked ~ .error, #show-q10:checked ~ #q10-correct1:not(:checked) ~ .error, #show-q10:checked ~ #q10-correct2:not(:checked) ~ .error { display: block; }
